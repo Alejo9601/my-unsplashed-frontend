@@ -48,6 +48,10 @@
   width: 15%;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
+  background-image: url(../assets/search.png);
+  background-size: 17.05px 17.05px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .header__searchbar input {
