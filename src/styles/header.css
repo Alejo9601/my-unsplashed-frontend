@@ -7,13 +7,13 @@
 
 .header__logo-container {
   position: absolute;
-  left: 30px;
+  left: 0px;
   top: 43px;
 }
 
 .header__upload-btn {
   position: absolute;
-  right: 30px;
+  right: 0px;
   top: 32px;
   background-color: var(--color_green);
   border-radius: 12px;
@@ -35,7 +35,7 @@
 .header__searchbar {
   position: absolute;
   background-color: white;
-  left: 190px;
+  left: 160px;
   top: 32px;
   width: 300px;
   border: 1px solid var(--color-lightgray);
