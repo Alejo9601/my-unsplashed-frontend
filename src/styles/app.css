@@ -4,6 +4,11 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+:root {
+  --color_green: #3db46d;
+  --color-lightgray: #bdbdbd;
+}
+
 .App {
   display: flex;
   flex-wrap: wrap;

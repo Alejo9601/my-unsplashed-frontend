@@ -8,14 +8,14 @@
 .header__logo-container {
   position: absolute;
   left: 30px;
-  top: 32px;
+  top: 43px;
 }
 
 .header__upload-btn {
   position: absolute;
   right: 30px;
   top: 32px;
-  background-color: #3db46d;
+  background-color: var(--color_green);
   border-radius: 12px;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   width: 137px;
@@ -34,11 +34,11 @@
 
 .header__searchbar {
   position: absolute;
-  background-color: #fff;
+  background-color: white;
   left: 190px;
   top: 32px;
   width: 300px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid var(--color-lightgray);
   filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
   border-radius: 12px;
   display: flex;
@@ -59,7 +59,7 @@
   height: 55px;
   font-weight: 500;
   font-size: 14px;
-  color: #bdbdbd;
+  color: var(--color-lightgray);
   border: 0px;
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
