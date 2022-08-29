@@ -1,11 +1,40 @@
 .confirm-delete-modal {
   position: fixed;
-  width: 500px;
-  height: 300px;
-  background-color: azure;
+  width: 620px;
+  height: 276.12px;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: auto;
   top: 0px;
-  left: 35%;
+  left: 0px;
   right: 0px;
   bottom: 0px;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.confirm-delete-modal h3 {
+  font-weight: 500;
+  font-size: 24px;
+  align-self: flex-start;
+}
+
+.confirm-delete-modal__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-delete-modal__form label {
+  width: 552.33px;
+}
+
+.confirm-delete-modal__form input {
+  width: 552.33px;
+  height: 55px;
+  border: 1px solid #4f4f4f;
+  filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+  border-radius: 12px;
 }
