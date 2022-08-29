@@ -7,8 +7,12 @@ const ConfirmDeleteModal = () => {
       <form className="confirm-delete-modal__form">
         <label>
           Password
-          <input type="password" name="userpassword" />
+          <input type="password" name="userpassword" id="userpass" />
         </label>
+        <div className="confirm-delete-modal__form-buttons">
+          <input type="button" name="cancel" value="Cancel" id="cancel-btn" />
+          <input type="button" name="delete" value="Delete" id="delete-btn" />
+        </div>
       </form>
     </div>
   );
