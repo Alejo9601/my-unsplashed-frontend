@@ -1,4 +1,4 @@
-.confirm-delete-modal {
+.upload-image-modal {
   position: fixed;
   width: 500px;
   height: fit-content;
@@ -15,27 +15,28 @@
   flex-wrap: wrap;
 }
 
-.confirm-delete-modal h3 {
+.upload-image-modal h3 {
   font-weight: 500;
   font-size: 24px;
   width: 450px;
   margin-top: 20px;
 }
 
-.confirm-delete-modal__form {
+.upload-image-modal__form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.confirm-delete-modal__form label {
+.upload-image-modal__form label {
   width: 450px;
   margin: 20px 0px 0px 0px;
   font-size: 14px;
 }
 
-.confirm-delete-modal__form #userpass {
+.upload-image-modal__form #image-label,
+.upload-image-modal__form #image-url {
   width: 450px;
   text-align: center;
   margin-top: 10px;
@@ -45,29 +46,29 @@
   border-radius: 12px;
 }
 
-.confirm-delete-modal__form-buttons {
+.upload-image-modal__form-buttons {
   width: 450px;
   display: flex;
   justify-content: flex-end;
-  margin: 20px 0px;
+  margin: 20px 0px 20px 0px;
 }
 
-.confirm-delete-modal__form-buttons #cancel-btn,
-.confirm-delete-modal__form-buttons #delete-btn {
+.upload-image-modal__form-buttons #cancel-btn,
+.upload-image-modal__form-buttons #upload-btn {
   height: 40px;
   width: 90px;
   font-size: 14px;
   cursor: pointer;
 }
 
-.confirm-delete-modal__form-buttons #cancel-btn {
+.upload-image-modal__form-buttons #cancel-btn {
   border: 0px;
   background-color: transparent;
   color: #4f4f4f;
 }
 
-.confirm-delete-modal__form-buttons #delete-btn {
-  background-color: var(--color-red);
+.upload-image-modal__form-buttons #upload-btn {
+  background-color: var(--color-green);
   border: 0px;
   border-radius: 12px;
   color: white;

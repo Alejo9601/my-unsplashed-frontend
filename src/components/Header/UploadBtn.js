@@ -1,6 +1,6 @@
-const UploadBtn = () => {
+const UploadBtn = ({ handleUpload }) => {
   return (
-    <div className="header__upload-btn">
+    <div onClick={() => handleUpload()} className="header__upload-btn">
       <p>Add a photo</p>
     </div>
   );

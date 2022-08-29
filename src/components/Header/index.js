@@ -6,18 +6,14 @@ import { useState } from "react";
 import Login from "./Login";
 import useUser from "../../hooks/useUser";
 
-const Header = () => {
+const Header = ({ handleUpload }) => {
   const isLogged = useUser();
 
   return (
     <header className="header">
       <Logo></Logo>
       <SearchBar></SearchBar>
-      {isLogged ? (
-        <UploadBtn Style={{ alignSelf: "flex-end" }}></UploadBtn>
-      ) : (
-        <Login></Login>
-      )}
+      {isLogged ? <UploadBtn handleUpload={handleUpload} /> : <Login></Login>}
     </header>
   );
 };
