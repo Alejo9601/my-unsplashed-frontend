@@ -9,11 +9,16 @@ const Home = () => {
   const handleDelete = () => {
     setShowDeleteModal(true);
   };
+  const handleCancelDelete = () => {
+    setShowDeleteModal(false);
+  };
   return (
     <>
       <Header />
       <GridMasonry handleDelete={handleDelete} />
-      {showDeleteModal ? <ConfirmDeleteModal /> : null}
+      {showDeleteModal ? (
+        <ConfirmDeleteModal handleCancelDelete={handleCancelDelete} />
+      ) : null}
     </>
   );
 };
