@@ -11,6 +11,9 @@ const Home = () => {
   const handleDelete = () => {
     setShowDeleteModal(true);
   };
+  const handleCancelUpload = () => {
+    setShowUploadModal(false);
+  };
   const handleCancelDelete = () => {
     setShowDeleteModal(false);
   };
@@ -25,7 +28,9 @@ const Home = () => {
       {showDeleteModal ? (
         <ConfirmDeleteModal handleCancelDelete={handleCancelDelete} />
       ) : null}
-      {showUploadModal ? <UploadImageModal /> : null}
+      {showUploadModal ? (
+        <UploadImageModal handleCancelUpload={handleCancelUpload} />
+      ) : null}
     </>
   );
 };
