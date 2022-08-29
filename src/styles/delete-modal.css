@@ -1,0 +1,11 @@
+.confirm-delete-modal {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  background-color: azure;
+  top: 0px;
+  left: 35%;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+}

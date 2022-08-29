@@ -24,11 +24,16 @@ const images = [
   "19.jpg",
 ];
 
-const GridMasonry = () => {
+const GridMasonry = ({ handleDelete }) => {
   return (
     <div className="grid-masonry">
       {images.map((image) => {
-        return <ImgItem src={require(`../../assets/${image}`)} />;
+        return (
+          <ImgItem
+            src={require(`../../assets/${image}`)}
+            handleDelete={handleDelete}
+          />
+        );
       })}
     </div>
   );

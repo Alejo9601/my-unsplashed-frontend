@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const ImgItem = ({ src }) => {
+const ImgItem = ({ src, handleDelete }) => {
   const btnRef = useRef();
   const imgRef = useRef();
 
@@ -20,7 +20,11 @@ const ImgItem = ({ src }) => {
       onMouseLeave={handleMouseLeave}
       className="grid-masonry__item-container"
     >
-      <div ref={btnRef} className="generic-button">
+      <div
+        ref={btnRef}
+        className="generic-button"
+        onClick={() => handleDelete()}
+      >
         <p>delete</p>
       </div>
       <img ref={imgRef} src={src} alt="" />
