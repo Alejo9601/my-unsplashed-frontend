@@ -1,5 +1,6 @@
 import ImgItem from "./imgItem";
 import "../../styles/grid-masonry.css";
+import "../../styles/generics.css";
 
 const images = [
   "1.jpg",
