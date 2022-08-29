@@ -4,15 +4,16 @@ import UploadBtn from "./UploadBtn";
 import "../../styles/header.css";
 import { useState } from "react";
 import Login from "./Login";
+import useUser from "../../hooks/useUser";
 
 const Header = () => {
-  const [logged, setLogged] = useState(true);
+  const isLogged = useUser();
 
   return (
     <header className="header">
       <Logo></Logo>
       <SearchBar></SearchBar>
-      {logged ? (
+      {isLogged ? (
         <UploadBtn Style={{ alignSelf: "flex-end" }}></UploadBtn>
       ) : (
         <Login></Login>
