@@ -37,8 +37,8 @@
 
 .modal__form input[type="text"],
 .modal__form input[type="password"] {
-  width: 450px;
-  text-align: center;
+  width: 420px;
+  padding: 0px 15px;
   margin-top: 10px;
   height: 40px;
   border: 1px solid #4f4f4f;
