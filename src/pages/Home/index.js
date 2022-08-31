@@ -8,7 +8,7 @@ const Home = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
-  const handleDelete = () => {
+  const handleClickDelete = () => {
     setShowDeleteModal(true);
   };
   const handleCancelUpload = () => {
@@ -17,14 +17,14 @@ const Home = () => {
   const handleCancelDelete = () => {
     setShowDeleteModal(false);
   };
-  const handleUpload = () => {
+  const handleClickUpload = () => {
     setShowUploadModal(true);
   };
 
   return (
     <>
-      <Header handleUpload={handleUpload} />
-      <GridMasonry handleDelete={handleDelete} />
+      <Header handleClickUpload={handleClickUpload} />
+      <GridMasonry handleDelete={handleClickDelete} />
       {showDeleteModal ? (
         <ConfirmDeleteModal handleCancelDelete={handleCancelDelete} />
       ) : null}
