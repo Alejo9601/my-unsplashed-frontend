@@ -2,7 +2,7 @@ import { useRef } from "react";
 import submitNewImage from "../../services/submitNewImage";
 import Modal from "../Generics/Modal";
 
-const UploadImageModal = ({ handleCancelUpload }) => {
+const UploadImageModal = ({ showModal }) => {
   const imageLabelRef = useRef();
   const imageUrlRef = useRef();
 
@@ -11,13 +11,13 @@ const UploadImageModal = ({ handleCancelUpload }) => {
       name: imageLabelRef.current.value,
       url: imageUrlRef.current.value,
     };
-    submitNewImage(image).then((res) => console.log(res));
+    submitNewImage(image).then((res) => showModal(false));
   };
 
   return (
     <Modal
       action="ADD"
-      handleCancel={handleCancelUpload}
+      handleCancel={() => showModal(false)}
       handleAction={handleSubmitImage}
     >
       <label>

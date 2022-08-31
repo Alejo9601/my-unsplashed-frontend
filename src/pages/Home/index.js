@@ -13,14 +13,10 @@ const Home = () => {
       <Header handleClickUpload={() => setShowUploadModal(true)} />
       <GridMasonry handleDelete={() => setShowDeleteModal(true)} />
       {showDeleteModal ? (
-        <ConfirmDeleteModal
-          handleCancelDelete={() => setShowDeleteModal(false)}
-        />
+        <ConfirmDeleteModal showModal={setShowDeleteModal} />
       ) : null}
       {showUploadModal ? (
-        <UploadImageModal
-          handleCancelUpload={() => setShowUploadModal(false)}
-        />
+        <UploadImageModal showModal={setShowUploadModal} />
       ) : null}
     </>
   );

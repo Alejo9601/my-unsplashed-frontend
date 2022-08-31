@@ -1,8 +1,8 @@
 import Modal from "../Generics/Modal";
 
-const ConfirmDeleteModal = ({ handleCancelDelete }) => {
+const ConfirmDeleteModal = ({ showModal }) => {
   return (
-    <Modal btnActionText="Delete" handleCancel={handleCancelDelete}>
+    <Modal btnActionText="Delete" handleCancel={() => showModal(false)}>
       <label>
         Password
         <input type="password" name="userpassword" id="userpass" />
