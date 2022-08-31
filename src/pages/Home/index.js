@@ -8,28 +8,19 @@ const Home = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
 
-  const handleClickDelete = () => {
-    setShowDeleteModal(true);
-  };
-  const handleCancelUpload = () => {
-    setShowUploadModal(false);
-  };
-  const handleCancelDelete = () => {
-    setShowDeleteModal(false);
-  };
-  const handleClickUpload = () => {
-    setShowUploadModal(true);
-  };
-
   return (
     <>
-      <Header handleClickUpload={handleClickUpload} />
-      <GridMasonry handleDelete={handleClickDelete} />
+      <Header handleClickUpload={() => setShowUploadModal(true)} />
+      <GridMasonry handleDelete={() => setShowDeleteModal(true)} />
       {showDeleteModal ? (
-        <ConfirmDeleteModal handleCancelDelete={handleCancelDelete} />
+        <ConfirmDeleteModal
+          handleCancelDelete={() => setShowDeleteModal(false)}
+        />
       ) : null}
       {showUploadModal ? (
-        <UploadImageModal handleCancelUpload={handleCancelUpload} />
+        <UploadImageModal
+          handleCancelUpload={() => setShowUploadModal(false)}
+        />
       ) : null}
     </>
   );
