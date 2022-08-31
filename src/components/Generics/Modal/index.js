@@ -1,6 +1,6 @@
 import "../../../styles/modal.css";
 
-const Modal = ({ children, handleCancel, action = "DELETE" }) => {
+const Modal = ({ children, handleCancel, action = "DELETE", handleAction }) => {
   return (
     <div className="modal">
       <h3>{action === "DELETE" ? "Are you sure?" : "Add an image"}</h3>
@@ -19,6 +19,7 @@ const Modal = ({ children, handleCancel, action = "DELETE" }) => {
             name="action-btn"
             value={action === "DELETE" ? "Delete" : "Submit"}
             id={action === "DELETE" ? "delete-btn" : "submit-btn"}
+            onClick={() => handleAction()}
           />
         </div>
       </form>
