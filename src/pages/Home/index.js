@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Header handleClickUpload={() => setShowUploadModal(true)} />
-      <GridMasonry handleDelete={() => setShowDeleteModal(true)} />
+      <GridMasonry handleClickDelete={() => setShowDeleteModal(true)} />
       {showDeleteModal ? (
         <ConfirmDeleteModal showModal={setShowDeleteModal} />
       ) : null}
