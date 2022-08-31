@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import getAllImages from "../services/getAllImages";
 
-const useImages = () => {
+const useAllImages = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -11,4 +11,4 @@ const useImages = () => {
   return images;
 };
 
-export default useImages;
+export default useAllImages;
