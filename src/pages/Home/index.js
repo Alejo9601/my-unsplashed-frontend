@@ -3,6 +3,7 @@ import ConfirmDeleteModal from "../../components/ConfirmDeleteModal";
 import GridMasonry from "../../components/GridMasonry";
 import Header from "../../components/Header";
 import UploadImageModal from "../../components/UploadImageModal";
+import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDelete";
 
 const Home = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -11,13 +12,17 @@ const Home = () => {
   return (
     <>
       <Header handleClickUpload={() => setShowUploadModal(true)} />
-      <GridMasonry handleClickDelete={() => setShowDeleteModal(true)} />
-      {showDeleteModal ? (
-        <ConfirmDeleteModal showModal={setShowDeleteModal} />
-      ) : null}
+
       {showUploadModal ? (
         <UploadImageModal showModal={setShowUploadModal} />
       ) : null}
+
+      <ImageToDelete>
+        <GridMasonry onDeleteBtnClick={() => setShowDeleteModal(true)} />
+        {showDeleteModal ? (
+          <ConfirmDeleteModal showModal={setShowDeleteModal} />
+        ) : null}
+      </ImageToDelete>
     </>
   );
 };
