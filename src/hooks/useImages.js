@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import ImagesContext from "../context/ImagesContext";
+import deleteOneImg from "../services/deleteOneImg";
 import submitNewImage from "../services/submitNewImage";
 
 const useImages = () => {
@@ -15,7 +16,15 @@ const useImages = () => {
     );
   };
 
-  return { images, submitImage };
+  const deleteImg = (imgId) => {
+    return deleteOneImg(imgId).then(
+      setImages((prevImages) =>
+        prevImages.filter((image) => image._id !== imgId)
+      )
+    );
+  };
+
+  return { images, submitImage, deleteImg };
 };
 
 export default useImages;
