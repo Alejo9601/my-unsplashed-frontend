@@ -3,11 +3,11 @@ import "../../styles/grid-masonry.css";
 import "../../styles/generics.css";
 import useImages from "../../hooks/useImages";
 import { useContext } from "react";
-import ImageToDelete from "../../context/ImageToDelete";
+import ImageToDeleteContext from "../../context/ImageToDeleteContext";
 
 const GridMasonry = ({ onDeleteBtnClick }) => {
   const { images } = useImages();
-  const { setImgId } = useContext(ImageToDelete);
+  const { setImgId } = useContext(ImageToDeleteContext);
 
   const handleDeleteBtn = (idToDelete) => {
     onDeleteBtnClick();

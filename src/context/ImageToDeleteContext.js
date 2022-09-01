@@ -1,16 +1,16 @@
 import { createContext, useState } from "react";
 
-const ImageToDelete = createContext();
+const ImageToDeleteContext = createContext();
 
 const ImageToDeleteProvider = ({ children }) => {
   const [imgId, setImgId] = useState(null);
 
   return (
-    <ImageToDelete.Provider value={{ imgId, setImgId }}>
+    <ImageToDeleteContext.Provider value={{ imgId, setImgId }}>
       {children}
-    </ImageToDelete.Provider>
+    </ImageToDeleteContext.Provider>
   );
 };
 
 export { ImageToDeleteProvider };
-export default ImageToDelete;
+export default ImageToDeleteContext;

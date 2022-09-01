@@ -3,7 +3,7 @@ import ConfirmDeleteModal from "../../components/ConfirmDeleteModal";
 import GridMasonry from "../../components/GridMasonry";
 import Header from "../../components/Header";
 import UploadImageModal from "../../components/UploadImageModal";
-import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDelete";
+import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDeleteContext";
 
 const Home = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);

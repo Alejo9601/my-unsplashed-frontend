@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import ImageToDelete from "../../context/ImageToDelete";
+import ImageToDeleteContext from "../../context/ImageToDeleteContext";
 import useImages from "../../hooks/useImages";
 import Modal from "../Generics/Modal";
 
 const ConfirmDeleteModal = ({ showModal }) => {
-  const { imgId, setImgId } = useContext(ImageToDelete);
+  const { imgId, setImgId } = useContext(ImageToDeleteContext);
   const { deleteImg } = useImages();
 
   const handleOnConfirmDelete = () => {
