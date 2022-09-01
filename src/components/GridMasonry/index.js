@@ -9,7 +9,7 @@ const GridMasonry = ({ handleClickDelete }) => {
   return (
     <div className="grid-masonry">
       {images.map((image) => {
-        return <ImgItem src={image.url} handleDelete={handleClickDelete} />;
+        return <ImgItem key={image._id} src={image.url} handleDelete={handleClickDelete} />;
       })}
     </div>
   );
