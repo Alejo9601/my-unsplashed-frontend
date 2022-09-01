@@ -1,3 +1,4 @@
+import { ImagesProvider } from "./context/ImagesContext";
 import { UserProvider } from "./context/UserContext";
 import Home from "./pages/Home";
 import "./styles/app.css";
@@ -5,9 +6,11 @@ import "./styles/app.css";
 function App() {
   return (
     <UserProvider>
-      <div className="App">
-        <Home />
-      </div>
+      <ImagesProvider>
+        <div className="App">
+          <Home />
+        </div>
+      </ImagesProvider>
     </UserProvider>
   );
 }

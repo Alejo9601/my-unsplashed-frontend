@@ -1,10 +1,10 @@
 import ImgItem from "./imgItem";
 import "../../styles/grid-masonry.css";
 import "../../styles/generics.css";
-import useAllImages from "../../hooks/useAllImages";
+import useImages from "../../hooks/useImages";
 
 const GridMasonry = ({ handleClickDelete }) => {
-  const images = useAllImages();
+  const { images } = useImages();
 
   return (
     <div className="grid-masonry">

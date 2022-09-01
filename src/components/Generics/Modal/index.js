@@ -19,7 +19,7 @@ const Modal = ({ children, handleCancel, action = "DELETE", handleAction }) => {
             name="action-btn"
             value={action === "DELETE" ? "Delete" : "Submit"}
             id={action === "DELETE" ? "delete-btn" : "submit-btn"}
-            onClick={() => handleAction()}
+            onClick={handleAction}
           />
         </div>
       </form>

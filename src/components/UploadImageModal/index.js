@@ -1,24 +1,22 @@
 import { useRef } from "react";
-import submitNewImage from "../../services/submitNewImage";
+import useImages from "../../hooks/useImages";
 import Modal from "../Generics/Modal";
 
 const UploadImageModal = ({ showModal }) => {
+  const { submitImage } = useImages();
   const imageLabelRef = useRef();
   const imageUrlRef = useRef();
-
-  const handleSubmitImage = () => {
-    const image = {
-      name: imageLabelRef.current.value,
-      url: imageUrlRef.current.value,
-    };
-    submitNewImage(image).then((res) => showModal(false));
-  };
 
   return (
     <Modal
       action="ADD"
       handleCancel={() => showModal(false)}
-      handleAction={handleSubmitImage}
+      handleAction={() =>
+        submitImage(
+          imageLabelRef.current.value,
+          imageUrlRef.current.value
+        ).then(showModal(false))
+      }
     >
       <label>
         Label
