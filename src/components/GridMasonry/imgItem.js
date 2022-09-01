@@ -1,17 +1,18 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Button from "../Generics/Button";
 
 const ImgItem = ({ image = {}, handleDelete }) => {
-  const btnRef = useRef();
   const imgRef = useRef();
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const handleMouseEnter = () => {
     imgRef.current.style.filter = "brightness(50%)";
-    btnRef.current.className = "generic-button visible";
+    setShowOverlay(true);
   };
 
   const handleMouseLeave = () => {
     imgRef.current.style.filter = "brightness(100%)";
-    btnRef.current.className = "generic-button";
+    setShowOverlay(false);
   };
 
   return (
@@ -20,13 +21,10 @@ const ImgItem = ({ image = {}, handleDelete }) => {
       onMouseLeave={handleMouseLeave}
       className="grid-masonry__item-container"
     >
-      <div
-        ref={btnRef}
-        className="generic-button"
-        onClick={() => handleDelete(image._id)}
-      >
-        <p>delete</p>
-      </div>
+      {showOverlay ? (
+        <Button onClick={() => handleDelete(image._url)} btnText="delete" />
+      ) : null}
+
       <img ref={imgRef} src={image.url} alt="" />
     </div>
   );
