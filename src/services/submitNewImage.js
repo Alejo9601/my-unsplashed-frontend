@@ -6,8 +6,8 @@ const submitNewImage = (newImage) => {
     },
     body: JSON.stringify(newImage),
   };
-  return fetch("http://localhost:3001/api/v1", options).then((res) =>
-    res.json()
+  return fetch("https://my-unsplashed.herokuapp.com/api/v1", options).then(
+    (res) => res.json()
   );
 };
 
