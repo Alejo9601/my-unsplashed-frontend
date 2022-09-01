@@ -20,9 +20,8 @@ const GridMasonry = ({ onDeleteBtnClick }) => {
         return (
           <ImgItem
             key={image._id}
-            src={image.url}
+            image={image}
             handleDelete={handleDeleteBtn}
-            listId={image._id}
           />
         );
       })}

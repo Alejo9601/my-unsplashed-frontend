@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const ImgItem = ({ src, handleDelete, listId }) => {
+const ImgItem = ({ image = {}, handleDelete }) => {
   const btnRef = useRef();
   const imgRef = useRef();
 
@@ -23,11 +23,11 @@ const ImgItem = ({ src, handleDelete, listId }) => {
       <div
         ref={btnRef}
         className="generic-button"
-        onClick={() => handleDelete(listId)}
+        onClick={() => handleDelete(image._id)}
       >
         <p>delete</p>
       </div>
-      <img ref={imgRef} src={src} alt="" />
+      <img ref={imgRef} src={image.url} alt="" />
     </div>
   );
 };
