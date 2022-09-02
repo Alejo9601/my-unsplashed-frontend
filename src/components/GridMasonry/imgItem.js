@@ -1,6 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import ImageToDeleteContext from "../../context/ImageToDeleteContext";
-import Button from "../Generics/Button";
+import DeleteButton from "./DeleteButton";
+import ImageTitle from "./ImageTitle";
 
 const ImgItem = ({ image = {}, onDeleteBtnClick }) => {
   const imgRef = useRef();
@@ -29,10 +30,12 @@ const ImgItem = ({ image = {}, onDeleteBtnClick }) => {
       className="grid-masonry__item-container"
     >
       {showOverlay ? (
-        <Button onClickAction={handleDeleteBtn} btnText="delete" />
+        <>
+          <DeleteButton onClickAction={handleDeleteBtn} btnText="delete" />
+          <ImageTitle titleText={image.name} />
+        </>
       ) : null}
-
-      <img ref={imgRef} src={image.url} alt="" />
+      <img ref={imgRef} src={image.url} alt={image.name} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-const Button = ({ onClickAction, btnText }) => {
+const DeleteButton = ({ onClickAction, btnText }) => {
   return (
     <div className="generic-button" onClick={() => onClickAction()}>
       <p>{btnText}</p>
@@ -6,4 +6,4 @@ const Button = ({ onClickAction, btnText }) => {
   );
 };
 
-export default Button;
+export default DeleteButton;
