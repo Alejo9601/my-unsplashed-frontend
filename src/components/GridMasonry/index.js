@@ -1,4 +1,4 @@
-import ImgItem from "./ImgItem";
+import ImgItem from "./ImgItemTemporal";
 import "../../styles/grid-masonry.css";
 import "../../styles/generics.css";
 import useImages from "../../hooks/useImages";
