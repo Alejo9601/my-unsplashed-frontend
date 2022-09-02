@@ -1,9 +1,16 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import ImageToDeleteContext from "../../context/ImageToDeleteContext";
 import Button from "../Generics/Button";
 
-const ImgItem = ({ image = {}, handleDelete }) => {
+const ImgItem = ({ image = {}, onDeleteBtnClick }) => {
   const imgRef = useRef();
   const [showOverlay, setShowOverlay] = useState(false);
+  const { setImgId } = useContext(ImageToDeleteContext);
+
+  const handleDeleteBtn = () => {
+    onDeleteBtnClick();
+    setImgId(image._id);
+  };
 
   const handleMouseEnter = () => {
     imgRef.current.style.filter = "brightness(50%)";
@@ -22,7 +29,7 @@ const ImgItem = ({ image = {}, handleDelete }) => {
       className="grid-masonry__item-container"
     >
       {showOverlay ? (
-        <Button onClick={() => handleDelete(image._url)} btnText="delete" />
+        <Button onClickAction={handleDeleteBtn} btnText="delete" />
       ) : null}
 
       <img ref={imgRef} src={image.url} alt="" />

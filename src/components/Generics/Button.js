@@ -1,6 +1,6 @@
-const Button = ({ onClick, btnText }) => {
+const Button = ({ onClickAction, btnText }) => {
   return (
-    <div className="generic-button" onClick={() => onClick()}>
+    <div className="generic-button" onClick={() => onClickAction()}>
       <p>{btnText}</p>
     </div>
   );

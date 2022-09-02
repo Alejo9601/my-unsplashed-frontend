@@ -2,17 +2,9 @@ import ImgItem from "./ImgItem";
 import "../../styles/grid-masonry.css";
 import "../../styles/generics.css";
 import useImages from "../../hooks/useImages";
-import { useContext } from "react";
-import ImageToDeleteContext from "../../context/ImageToDeleteContext";
 
 const GridMasonry = ({ onDeleteBtnClick }) => {
   const { images } = useImages();
-  const { setImgId } = useContext(ImageToDeleteContext);
-
-  const handleDeleteBtn = (idToDelete) => {
-    onDeleteBtnClick();
-    setImgId(idToDelete);
-  };
 
   return (
     <div className="grid-masonry">
@@ -21,7 +13,7 @@ const GridMasonry = ({ onDeleteBtnClick }) => {
           <ImgItem
             key={image._id}
             image={image}
-            handleDelete={handleDeleteBtn}
+            onDeleteBtnClick={onDeleteBtnClick}
           />
         );
       })}
