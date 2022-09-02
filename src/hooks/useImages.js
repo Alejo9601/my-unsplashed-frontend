@@ -4,7 +4,8 @@ import deleteOneImg from "../services/deleteOneImg";
 import submitNewImage from "../services/submitNewImage";
 
 const useImages = () => {
-  const { images, setImages } = useContext(ImagesContext);
+  const { images, setImages, imagesBySearch, setImagesBySearch } =
+    useContext(ImagesContext);
 
   const submitImage = async (name, url) => {
     const image = {
@@ -24,7 +25,18 @@ const useImages = () => {
     );
   };
 
-  return { images, submitImage, deleteImg };
+  const searchByName = (nameToSearch) => {
+    if (nameToSearch === "") {
+      console.log("entre");
+      setImagesBySearch([]);
+      return;
+    }
+    console.log(typeof nameToSearch);
+    console.log(images.filter((image) => image.name === nameToSearch));
+    setImagesBySearch(images.filter((image) => image.name === nameToSearch));
+  };
+
+  return { images, imagesBySearch, submitImage, deleteImg, searchByName };
 };
 
 export default useImages;

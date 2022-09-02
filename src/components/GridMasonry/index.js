@@ -1,22 +1,21 @@
-import ImgItem from "./ImgItem";
 import "../../styles/grid-masonry.css";
 import "../../styles/generics.css";
 import useImages from "../../hooks/useImages";
+import ImgList from "./ImgList";
 
 const GridMasonry = ({ onDeleteBtnClick }) => {
-  const { images } = useImages();
+  const { images, imagesBySearch } = useImages();
 
   return (
     <div className="grid-masonry">
-      {images.map((image) => {
-        return (
-          <ImgItem
-            key={image._id}
-            image={image}
-            onDeleteBtnClick={onDeleteBtnClick}
-          />
-        );
-      })}
+      {imagesBySearch.length === 0 ? (
+        <ImgList imgsArray={images} onDeleteBtnClick={onDeleteBtnClick} />
+      ) : (
+        <ImgList
+          imgsArray={imagesBySearch}
+          onDeleteBtnClick={onDeleteBtnClick}
+        />
+      )}
     </div>
   );
 };
