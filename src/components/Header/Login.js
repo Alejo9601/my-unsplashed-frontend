@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
     <div className="header-auth-options">
-      <a href="">Login</a>
+      <Link to="/login">Login</Link>
       <span>{"  /  "}</span>
-      <a href="">Sign in</a>
+      <Link to="">Sign in</Link>
     </div>
   );
 };
