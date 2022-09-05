@@ -2,15 +2,19 @@ import "../../styles/login.css";
 import logo from "../../assets/favicon.ico";
 import useUser from "../../hooks/useUser";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { validateUser } = useUser();
   const usernameRef = useRef();
   const passwordRef = useRef();
+  const navigate = useNavigate();
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    validateUser(usernameRef.current.value, passwordRef.current.value);
+    validateUser(usernameRef.current.value, passwordRef.current.value).then(
+      (user) => (user.logged ? navigate("/home") : null)
+    );
   };
 
   return (

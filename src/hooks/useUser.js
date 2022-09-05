@@ -6,7 +6,14 @@ const useUser = () => {
   const { user, setUser } = useContext(UserContext);
 
   const validateUser = (username, password) => {
-    login(username, password).then((res) => console.log(res));
+    return login(username, password).then((res) => {
+      const userLogged = {
+        name: res.username,
+        logged: true,
+      };
+      setUser(userLogged);
+      return userLogged;
+    });
   };
 
   return { user, validateUser };
