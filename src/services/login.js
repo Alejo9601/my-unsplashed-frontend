@@ -11,7 +11,7 @@ const login = (username, password) => {
     body: JSON.stringify(user),
   };
   return fetch("http://localhost:3001/api/v1/login", options).then((res) =>
-    console.log(res)
+    res.json()
   );
 };
 
