@@ -4,7 +4,7 @@ import useUser from "../../hooks/useUser";
 import { useRef } from "react";
 
 const Login = () => {
-  const { user, validateUser } = useUser();
+  const { validateUser } = useUser();
   const usernameRef = useRef();
   const passwordRef = useRef();
 
