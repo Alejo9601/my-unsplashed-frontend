@@ -4,11 +4,14 @@ const login = (username, password) => {
     password,
   };
   const options = {
-    method: "GET",
-    body: user,
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
   };
-  return fetch("http://localhost:3001/api/v1/user/login", options).then((res) =>
-    res.json()
+  return fetch("http://localhost:3001/api/v1/login", options).then((res) =>
+    console.log(res)
   );
 };
 
