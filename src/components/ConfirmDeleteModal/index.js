@@ -22,7 +22,7 @@ const ConfirmDeleteModal = ({ showModal }) => {
     >
       <label>
         Password
-        <input type="password" name="userpassword" id="userpass" />
+        <input type="password" name="userpassword" />
       </label>
     </Modal>
   );
