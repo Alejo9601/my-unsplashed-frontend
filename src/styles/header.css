@@ -35,7 +35,7 @@
 .header-auth-options a {
   text-decoration: none;
   color: var(--color-green);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .header__upload-btn:hover {
