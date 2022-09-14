@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SignInBanner from "../../assets/sign-in-left.jpg";
 import useUser from "../../hooks/useUser";
 import "../../styles/signin.css";
@@ -25,22 +25,35 @@ const SignIn = () => {
         <img src={SignInBanner} alt="banner" />
       </div>
       <div className="signin-container__right">
-        <div className="sigin-card">
+        <div className="signin-card">
+          <div className="signin-card___header">
+            <h1>Sign In</h1>
+          </div>
           <form onSubmit={handleSubmit} className="signin-form">
-            <input
-              ref={usernameRef}
-              type="text"
-              name="username"
-              id="username"
-            />
-            <input
-              ref={passwordRef}
-              type="password"
-              name="userpass"
-              id="userpass"
-            />
+            <label>
+              Username
+              <input
+                ref={usernameRef}
+                type="text"
+                name="username"
+                id="username"
+              />
+            </label>
+            <label>
+              Password
+              <input
+                ref={passwordRef}
+                type="password"
+                name="userpass"
+                id="userpass"
+              />
+            </label>
             <input type="submit" value="Register" id="registerbtn" />
           </form>
+          <div className="signin-card__footer">
+            <p>You already have an account?</p>
+            <Link to="/login"> Login </Link>
+          </div>
         </div>
       </div>
     </div>
