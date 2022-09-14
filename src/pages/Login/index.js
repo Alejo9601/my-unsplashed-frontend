@@ -2,7 +2,7 @@ import "../../styles/login.css";
 import logo from "../../assets/favicon.ico";
 import useUser from "../../hooks/useUser";
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FormFooter from "../../components/Generics/LogSignFormFooter";
 
 const Login = () => {
