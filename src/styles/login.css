@@ -42,6 +42,16 @@
   margin: 0px 0px 30px 0px;
 }
 
+.login-card__footer {
+  display: flex;
+}
+
+.login-card__footer a {
+  margin-left: 10px;
+  color: var(--color-green);
+  text-decoration: none;
+}
+
 #username,
 #userpass {
   width: 100%;

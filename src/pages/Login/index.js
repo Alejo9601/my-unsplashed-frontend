@@ -2,7 +2,7 @@ import "../../styles/login.css";
 import logo from "../../assets/favicon.ico";
 import useUser from "../../hooks/useUser";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { validateUser } = useUser();
@@ -46,6 +46,10 @@ const Login = () => {
           </label>
           <input id="login-btn" type="submit" name="loginbtn" value="Login" />
         </form>
+        <div className="login-card__footer">
+          <p>Dont´t have an account?</p>
+          <Link to="/home"> Sign In </Link>
+        </div>
       </div>
     </div>
   );
