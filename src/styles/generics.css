@@ -35,3 +35,13 @@ input[type="password"] {
   filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
   border-radius: 3px;
 }
+
+.log-sign__footer {
+  display: flex;
+}
+
+.log-sign__footer a {
+  margin-left: 10px;
+  color: var(--color-green);
+  text-decoration: none;
+}

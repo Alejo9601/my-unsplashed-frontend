@@ -43,13 +43,3 @@
   font-size: 14px;
   cursor: pointer;
 }
-
-.signin-card__footer {
-  display: flex;
-}
-
-.signin-card__footer a {
-  margin-left: 10px;
-  color: var(--color-green);
-  text-decoration: none;
-}

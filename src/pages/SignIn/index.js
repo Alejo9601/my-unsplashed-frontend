@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SignInBanner from "../../assets/sign-in-left.jpg";
 import useUser from "../../hooks/useUser";
+import FormFooter from "../../components/Generics/LogSignFormFooter";
 import "../../styles/signin.css";
 
 const SignIn = () => {
@@ -50,10 +51,11 @@ const SignIn = () => {
             </label>
             <input type="submit" value="Register" id="registerbtn" />
           </form>
-          <div className="signin-card__footer">
-            <p>You already have an account?</p>
-            <Link to="/login"> Login </Link>
-          </div>
+          <FormFooter
+            textFooter="Already have an account?"
+            destLink="/login"
+            linkText="Login"
+          />
         </div>
       </div>
     </div>
