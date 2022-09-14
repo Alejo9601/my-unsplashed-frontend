@@ -23,15 +23,6 @@
   align-items: center;
 }
 
-.signin-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-around;
-  width: 400px;
-  height: 450px;
-}
-
 #registerbtn {
   width: 100%;
   border: 0px;

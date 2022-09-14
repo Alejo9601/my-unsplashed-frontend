@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import SignInBanner from "../../assets/sign-in-left.jpg";
 import useUser from "../../hooks/useUser";
-import FormFooter from "../../components/Generics/LogSignFormFooter";
+import CardFooter from "../../components/Generics/LogSignFormFooter";
 import "../../styles/signin.css";
 import SignInForm from "../../components/SignInForm";
+import SignInCard from "../../components/Generics/LogSignCard";
 
 const SignIn = () => {
   const { registerUser } = useUser();
@@ -21,17 +22,17 @@ const SignIn = () => {
         <img src={SignInBanner} alt="banner" />
       </div>
       <div className="signin-container__right">
-        <div className="signin-card">
+        <SignInCard>
           <div className="signin-card___header">
             <h1>Sign In</h1>
           </div>
           <SignInForm onFormSubmit={onFormSubmit} />
-          <FormFooter
+          <CardFooter
             textFooter="Already have an account?"
             destLink="/login"
             linkText="Login"
           />
-        </div>
+        </SignInCard>
       </div>
     </div>
   );

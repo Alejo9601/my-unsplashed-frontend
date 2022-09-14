@@ -4,6 +4,7 @@ import useUser from "../../hooks/useUser";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import FormFooter from "../../components/Generics/LogSignFormFooter";
+import LoginCard from "../../components/Generics/LogSignCard";
 
 const Login = () => {
   const { validateUser } = useUser();
@@ -20,7 +21,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className="login-card">
+      <LoginCard>
         <div className="login-card__header">
           <img src={logo} alt="unsplashed logo" />
           <h1>Login</h1>
@@ -52,7 +53,7 @@ const Login = () => {
           destLink="/signin"
           linkText="Sign In"
         />
-      </div>
+      </LoginCard>
     </div>
   );
 };

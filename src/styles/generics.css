@@ -36,6 +36,15 @@ input[type="password"] {
   border-radius: 3px;
 }
 
+.login-signin-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 400px;
+  height: 450px;
+}
+
 .log-sign__footer {
   display: flex;
 }
