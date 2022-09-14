@@ -1,20 +1,15 @@
-import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import SignInBanner from "../../assets/sign-in-left.jpg";
 import useUser from "../../hooks/useUser";
 import FormFooter from "../../components/Generics/LogSignFormFooter";
 import "../../styles/signin.css";
+import SignInForm from "../../components/SignInForm";
 
 const SignIn = () => {
   const { registerUser } = useUser();
-  const usernameRef = useRef();
-  const passwordRef = useRef();
   const navigate = useNavigate();
 
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
-    const username = usernameRef.current.value;
-    const password = passwordRef.current.value;
+  const onFormSubmit = (username, password) => {
     registerUser(username, password).then((user) =>
       user.logged ? navigate("/home") : null
     );
@@ -30,27 +25,7 @@ const SignIn = () => {
           <div className="signin-card___header">
             <h1>Sign In</h1>
           </div>
-          <form onSubmit={handleSubmit} className="signin-form">
-            <label>
-              Username
-              <input
-                ref={usernameRef}
-                type="text"
-                name="username"
-                id="username"
-              />
-            </label>
-            <label>
-              Password
-              <input
-                ref={passwordRef}
-                type="password"
-                name="userpass"
-                id="userpass"
-              />
-            </label>
-            <input type="submit" value="Register" id="registerbtn" />
-          </form>
+          <SignInForm onFormSubmit={onFormSubmit} />
           <FormFooter
             textFooter="Already have an account?"
             destLink="/login"
