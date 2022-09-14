@@ -1,21 +1,18 @@
 import "../../styles/login.css";
 import logo from "../../assets/favicon.ico";
 import useUser from "../../hooks/useUser";
-import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import FormFooter from "../../components/Generics/LogSignFormFooter";
 import LoginCard from "../../components/Generics/LogSignCard";
+import LoginForm from "../../components/LoginForm";
 
 const Login = () => {
   const { validateUser } = useUser();
-  const usernameRef = useRef();
-  const passwordRef = useRef();
   const navigate = useNavigate();
 
-  const handleSubmit = (ev) => {
-    ev.preventDefault();
-    validateUser(usernameRef.current.value, passwordRef.current.value).then(
-      (user) => (user.logged ? navigate("/home") : null)
+  const onFormSubmit = (username, password) => {
+    validateUser(username, password).then((user) =>
+      user.logged ? navigate("/home") : null
     );
   };
 
@@ -27,27 +24,7 @@ const Login = () => {
           <h1>Login</h1>
           <span>Welcome</span>
         </div>
-        <form onSubmit={handleSubmit} className="login-card__form">
-          <label>
-            User
-            <input
-              ref={usernameRef}
-              id="username"
-              type="text"
-              name="username"
-            />
-          </label>
-          <label>
-            Password
-            <input
-              ref={passwordRef}
-              id="userpass"
-              type="password"
-              name="userpass"
-            />
-          </label>
-          <input id="login-btn" type="submit" name="loginbtn" value="Login" />
-        </form>
+        <LoginForm onFormSubmit={onFormSubmit} />
         <FormFooter
           textFooter="Don't have an account?"
           destLink="/signin"
