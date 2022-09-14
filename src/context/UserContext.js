@@ -3,7 +3,7 @@ const { createContext, useState } = require("react");
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ name: "Alejandro", logged: false });
+  const [user, setUser] = useState({ name: "", logged: false });
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}

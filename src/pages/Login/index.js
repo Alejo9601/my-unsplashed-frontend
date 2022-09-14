@@ -5,15 +5,18 @@ import { useNavigate } from "react-router-dom";
 import FormFooter from "../../components/Generics/LogSignFormFooter";
 import LoginCard from "../../components/Generics/LogSignCard";
 import LoginForm from "../../components/LoginForm";
+import { useEffect } from "react";
 
 const Login = () => {
-  const { validateUser } = useUser();
+  const { user, validateUser } = useUser();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (user.logged) navigate("/home");
+  }, [user, navigate]);
+
   const onFormSubmit = (username, password) => {
-    validateUser(username, password).then((user) =>
-      user.logged ? navigate("/home") : null
-    );
+    validateUser(username, password);
   };
 
   return (

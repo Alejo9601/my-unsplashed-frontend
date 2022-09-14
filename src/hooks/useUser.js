@@ -8,12 +8,10 @@ const useUser = () => {
 
   const validateUser = (username, password) => {
     return login(username, password).then((res) => {
-      const userLogged = {
-        name: res.username,
-        logged: true,
-      };
-      setUser(userLogged);
-      return userLogged;
+      if (res === null) {
+        setUser({ username: "", logged: false });
+      }
+      setUser({ username: username, logged: true });
     });
   };
 
