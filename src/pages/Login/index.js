@@ -48,7 +48,7 @@ const Login = () => {
         </form>
         <div className="login-card__footer">
           <p>Dont´t have an account?</p>
-          <Link to="/home"> Sign In </Link>
+          <Link to="/signin"> Sign In </Link>
         </div>
       </div>
     </div>
