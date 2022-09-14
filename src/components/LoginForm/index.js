@@ -15,7 +15,13 @@ const LoginForm = ({ onFormSubmit }) => {
     <form onSubmit={handleSubmit} className="login-card__form">
       <label>
         User
-        <input ref={usernameRef} id="username" type="text" name="username" />
+        <input
+          ref={usernameRef}
+          id="username"
+          type="text"
+          name="username"
+          required="required"
+        />
       </label>
       <label>
         Password
@@ -24,6 +30,7 @@ const LoginForm = ({ onFormSubmit }) => {
           id="userpass"
           type="password"
           name="userpass"
+          required="required"
         />
       </label>
       <input id="login-btn" type="submit" name="loginbtn" value="Login" />

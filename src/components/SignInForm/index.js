@@ -15,7 +15,13 @@ const SignInForm = ({ onFormSubmit }) => {
     <form onSubmit={handleSubmit} className="signin-form">
       <label>
         Username
-        <input ref={usernameRef} type="text" name="username" id="username" />
+        <input
+          ref={usernameRef}
+          type="text"
+          name="username"
+          id="username"
+          required="required"
+        />
       </label>
       <label>
         Password
@@ -24,6 +30,7 @@ const SignInForm = ({ onFormSubmit }) => {
           type="password"
           name="userpass"
           id="userpass"
+          required="required"
         />
       </label>
       <input type="submit" value="Register" id="registerbtn" />
