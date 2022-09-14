@@ -10,13 +10,9 @@ const Header = ({ handleClickUpload }) => {
 
   return (
     <header className="header">
-      <Logo></Logo>
-      <SearchBar></SearchBar>
-      {user.logged ? (
-        <UploadBtn handleUpload={handleClickUpload} />
-      ) : (
-        <Login></Login>
-      )}
+      <Logo />
+      <SearchBar />
+      {user.logged ? <UploadBtn handleUpload={handleClickUpload} /> : <Login />}
     </header>
   );
 };
