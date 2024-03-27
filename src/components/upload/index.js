@@ -3,18 +3,19 @@ import UploadTop from "./UploadTop";
 import UploadBottom from "./UploadBottom";
 import { FlexCard } from "../../styles/styled/div";
 import { useContext } from "react";
+import useImages from "../../hooks/useImages";
 import FileStatusContext from "../../context/FileStatusContext";
-import uploadImage from "../../services/uploadImage";
 import { isImageFile } from "../../helpers/isImageFile";
 
 const Upload = ({ show = true }) => {
-   const { setUploading, setUploadedImg } = useContext(FileStatusContext);
+   const { setUploading, setUploadedImg, tagName } =
+      useContext(FileStatusContext);
+   const { uploadImage } = useImages();
 
    const handleSelectedFile = (selectedImg) => {
-      if (isImageFile(selectedImg)) {
+      if (isImageFile(selectedImg) && tagName != null) {
          setUploading(true);
-         uploadImage(selectedImg).then((res) => {
-            setUploadedImg(res);
+         uploadImage(tagName, selectedImg).then(() => {
             setUploading(false);
          });
       } else {

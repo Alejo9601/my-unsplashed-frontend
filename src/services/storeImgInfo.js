@@ -1,4 +1,4 @@
-const submitNewImage = (newImage) => {
+const storeImgInfo = (newImage) => {
    const options = {
       method: "POST",
       headers: {
@@ -12,4 +12,4 @@ const submitNewImage = (newImage) => {
    ).then((res) => res.json());
 };
 
-export default submitNewImage;
+export default storeImgInfo;

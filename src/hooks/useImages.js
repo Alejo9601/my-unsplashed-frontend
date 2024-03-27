@@ -1,42 +1,48 @@
 import { useContext } from "react";
 import ImagesContext from "../context/ImagesContext";
 import deleteOneImg from "../services/deleteOneImg";
-import submitNewImage from "../services/submitNewImage";
+import storeImgInfo from "../services/storeImgInfo";
+import storeImgBin from "../services/storeImgBin";
+import FileStatusContext from "../context/FileStatusContext";
 
 const useImages = () => {
-  const { images, setImages, imagesBySearch, setImagesBySearch } =
-    useContext(ImagesContext);
+   const { images, setImages, imagesBySearch, setImagesBySearch } =
+      useContext(ImagesContext);
+   const { setUploadedImg } = useContext(FileStatusContext);
 
-  const submitImage = async (name, url) => {
-    const image = {
-      name: name,
-      url: url,
-    };
-    return submitNewImage(image).then((submitedImage) =>
-      setImages((prevImages) => [...prevImages, submitedImage])
-    );
-  };
+   const uploadImage = async (tagName, imgBin) => {
+      return storeImgBin(imgBin).then((res) => {
+         setUploadedImg(res);
+         storeImgInfo({ name: tagName, url: res.url });
+      });
+   };
 
-  const deleteImg = (imgId) => {
-    return deleteOneImg(imgId).then(
-      setImages((prevImages) =>
-        prevImages.filter((image) => image._id !== imgId)
-      )
-    );
-  };
+   const deleteImg = (imgId) => {
+      return deleteOneImg(imgId).then(
+         setImages((prevImages) =>
+            prevImages.filter((image) => image._id !== imgId)
+         )
+      );
+   };
 
-  const searchByName = (nameToSearch) => {
-    if (nameToSearch === "") {
-      console.log("entre");
-      setImagesBySearch([]);
-      return;
-    }
-    console.log(typeof nameToSearch);
-    console.log(images.filter((image) => image.name === nameToSearch));
-    setImagesBySearch(images.filter((image) => image.name === nameToSearch));
-  };
+   const searchByName = (nameToSearch) => {
+      if (nameToSearch === "") {
+         console.log("entre");
+         setImagesBySearch([]);
+         return;
+      }
+      console.log(typeof nameToSearch);
+      console.log(images.filter((image) => image.name === nameToSearch));
+      setImagesBySearch(images.filter((image) => image.name === nameToSearch));
+   };
 
-  return { images, imagesBySearch, submitImage, deleteImg, searchByName };
+   return {
+      images,
+      imagesBySearch,
+      uploadImage,
+      deleteImg,
+      searchByName,
+   };
 };
 
 export default useImages;
