@@ -6,25 +6,25 @@ import UploadImageModal from "../../components/UploadImageModal";
 import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDeleteContext";
 
 const Home = () => {
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showUploadModal, setShowUploadModal] = useState(false);
+   const [showDeleteModal, setShowDeleteModal] = useState(false);
+   const [showUploadModal, setShowUploadModal] = useState(false);
 
-  return (
-    <>
-      <Header handleClickUpload={() => setShowUploadModal(true)} />
+   return (
+      <>
+         <Header handleClickUpload={() => setShowUploadModal(true)} />
 
-      {showUploadModal ? (
-        <UploadImageModal showModal={setShowUploadModal} />
-      ) : null}
+         {showUploadModal ? (
+            <UploadImageModal showModal={setShowUploadModal} />
+         ) : null}
 
-      <ImageToDelete>
-        <GridMasonry onDeleteBtnClick={() => setShowDeleteModal(true)} />
-        {showDeleteModal ? (
-          <ConfirmDeleteModal showModal={setShowDeleteModal} />
-        ) : null}
-      </ImageToDelete>
-    </>
-  );
+         <ImageToDelete>
+            <GridMasonry onDeleteBtnClick={() => setShowDeleteModal(true)} />
+            {showDeleteModal ? (
+               <ConfirmDeleteModal showModal={setShowDeleteModal} />
+            ) : null}
+         </ImageToDelete>
+      </>
+   );
 };
 
 export default Home;

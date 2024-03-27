@@ -1,33 +1,25 @@
-import { useRef } from "react";
-import useImages from "../../hooks/useImages";
-import Modal from "../Generics/Modal";
+import FileStatusContext from "../../context/FileStatusContext";
+import { useContext } from "react";
+import Detail from "../detail";
+import Upload from "../upload";
+import Uploading from "../uploading";
+import { OpacityContainer } from "../../styles/styled/div";
 
-const UploadImageModal = ({ showModal }) => {
-  const { submitImage } = useImages();
-  const imageLabelRef = useRef();
-  const imageUrlRef = useRef();
+function UploadImageModal() {
+   const { uploading, uploadedImg } = useContext(FileStatusContext);
 
-  return (
-    <Modal
-      action="ADD"
-      handleCancel={() => showModal(false)}
-      handleAction={() =>
-        submitImage(
-          imageLabelRef.current.value,
-          imageUrlRef.current.value
-        ).then(showModal(false))
-      }
-    >
-      <label>
-        Label
-        <input ref={imageLabelRef} type="text" name="label" id="image-label" />
-      </label>
-      <label>
-        Photo URL
-        <input ref={imageUrlRef} type="text" name="url" id="image-url" />
-      </label>
-    </Modal>
-  );
-};
+   return (
+      <OpacityContainer>
+         {uploadedImg !== null ? (
+            <Detail />
+         ) : (
+            <>
+               <Upload show={uploading ? false : true} />
+               <Uploading show={uploading ? true : false} />
+            </>
+         )}
+      </OpacityContainer>
+   );
+}
 
 export default UploadImageModal;
