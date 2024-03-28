@@ -3,6 +3,7 @@ import { P_Gray as P } from "../../styles/styled/p";
 import InputButton from "./InputButton";
 import "../../styles/modal.css";
 import FileStatusContext from "../../context/FileStatusContext";
+import { FlexColumnDiv } from "../../styles/styled/div";
 
 const UploadBottom = ({ handleSelectedFile }) => {
    const { setTagName } = useContext(FileStatusContext);
@@ -13,11 +14,11 @@ const UploadBottom = ({ handleSelectedFile }) => {
    };
 
    return (
-      <>
-         <div>
+      <FlexColumnDiv>
+         <FlexColumnDiv>
             <P>Or</P>
             <InputButton handleSelectedFile={handleSelectedFile} />
-         </div>
+         </FlexColumnDiv>
          <div className="modal__form">
             <label>
                Name tag for image
@@ -29,7 +30,7 @@ const UploadBottom = ({ handleSelectedFile }) => {
                />
             </label>
          </div>
-      </>
+      </FlexColumnDiv>
    );
 };
 

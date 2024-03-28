@@ -8,6 +8,7 @@ export const FlexDiv = styled.div`
 `;
 
 export const FlexColumnDiv = styled(FlexDiv)`
+   width: 100%;
    flex-direction: column;
 `;
 
@@ -57,8 +58,9 @@ export const OpacityContainer = styled(FlexColumnDiv)`
 
 export const FlexCard = styled(FlexColumnDiv)`
    justify-content: space-evenly;
-   width: 402px;
+   width: 350px;
    height: 469px;
+   padding: 30px;
    border-radius: 10px;
    box-shadow: 0px 1px 5px 0px lightgray;
    background-color: ${cardBackground};
@@ -76,11 +78,12 @@ export const DragArea = styled(MiddleContainer)`
 `;
 
 export const Button = styled(FlexColumnDiv)`
+   width: fit-content;
    background-color: ${colorBlue};
    position: relative;
    border-radius: 5px;
    margin-top: 10px;
-   padding: 5px;
+   padding: 10px 15px;
    overflow: hidden;
 `;
 
