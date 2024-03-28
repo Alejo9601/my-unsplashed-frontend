@@ -28,12 +28,9 @@ const useImages = () => {
 
    const searchByName = (nameToSearch) => {
       if (nameToSearch === "") {
-         console.log("entre");
          setImagesBySearch([]);
          return;
       }
-      console.log(typeof nameToSearch);
-      console.log(images.filter((image) => image.name === nameToSearch));
       setImagesBySearch(images.filter((image) => image.name === nameToSearch));
    };
 

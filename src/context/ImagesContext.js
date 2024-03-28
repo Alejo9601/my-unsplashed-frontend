@@ -12,7 +12,6 @@ const ImagesProvider = ({ children }) => {
    useEffect(() => {
       getAllImages().then((res) => {
          setImages(res);
-         console.log(res);
       });
    }, [uploadedImg]);
 

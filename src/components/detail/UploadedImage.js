@@ -9,7 +9,6 @@ const UploadedImage = () => {
    return (
       <ImgContainer>
          <FullFitImage src={uploadedImg.url} alt="Uploaded" />
-         <>{console.log(uploadedImg.url)}</>
       </ImgContainer>
    );
 };
