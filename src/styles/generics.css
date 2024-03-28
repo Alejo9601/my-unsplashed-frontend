@@ -19,6 +19,15 @@
    width: 63px;
    border: 1px solid var(--color-red);
    z-index: 1;
+   transition: all ease 0.2s;
+}
+
+.img-delete-button:hover {
+   background-color: var(--color-red);
+
+   p {
+      color: #fff;
+   }
 }
 
 .img-delete-button p {
