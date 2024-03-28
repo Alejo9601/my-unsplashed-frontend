@@ -12,8 +12,9 @@ const useImages = () => {
 
    const uploadImage = async (tagName, imgBin) => {
       return storeImgBin(imgBin).then((res) => {
-         setUploadedImg(res);
-         storeImgInfo({ name: tagName, url: res.url });
+         storeImgInfo({ name: tagName, url: res.url }).then(() =>
+            setUploadedImg(res)
+         );
       });
    };
 

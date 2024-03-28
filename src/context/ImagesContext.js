@@ -1,23 +1,28 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import getAllImages from "../services/getAllImages";
+import FileStatusContext from "./FileStatusContext";
 
 const ImagesContext = createContext();
 
 const ImagesProvider = ({ children }) => {
-  const [images, setImages] = useState([]);
-  const [imagesBySearch, setImagesBySearch] = useState([]);
+   const [images, setImages] = useState([]);
+   const [imagesBySearch, setImagesBySearch] = useState([]);
+   const { uploadedImg } = useContext(FileStatusContext);
 
-  useEffect(() => {
-    getAllImages().then((res) => setImages(res));
-  }, []);
+   useEffect(() => {
+      getAllImages().then((res) => {
+         setImages(res);
+         console.log(res);
+      });
+   }, [uploadedImg]);
 
-  return (
-    <ImagesContext.Provider
-      value={{ images, setImages, imagesBySearch, setImagesBySearch }}
-    >
-      {children}
-    </ImagesContext.Provider>
-  );
+   return (
+      <ImagesContext.Provider
+         value={{ images, setImages, imagesBySearch, setImagesBySearch }}
+      >
+         {children}
+      </ImagesContext.Provider>
+   );
 };
 
 export { ImagesProvider };

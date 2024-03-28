@@ -2,9 +2,12 @@ import "../../styles/grid-masonry.css";
 import "../../styles/generics.css";
 import useImages from "../../hooks/useImages";
 import ImgList from "./ImgList";
+import { useEffect } from "react";
 
 const GridMasonry = ({ onDeleteBtnClick }) => {
    const { images, imagesBySearch } = useImages();
+
+   useEffect(() => {}, [images]);
 
    return (
       <div className="grid-masonry">
