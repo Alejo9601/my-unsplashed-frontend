@@ -64,6 +64,11 @@ export const FlexCard = styled(FlexColumnDiv)`
    border-radius: 10px;
    box-shadow: 0px 1px 5px 0px lightgray;
    background-color: ${cardBackground};
+
+   @media (max-width: 768px) {
+      height: fit-content;
+      width: 300px;
+   }
 `;
 
 export const UploadingCard = styled(FlexCard)`
@@ -75,6 +80,10 @@ export const DragArea = styled(MiddleContainer)`
    border: 3px dashed #a2dbfa66;
    background-color: #e1e5ea80;
    position: relative;
+
+   @media (max-width: 768px) {
+      display: none;
+   }
 `;
 
 export const Button = styled(FlexColumnDiv)`
