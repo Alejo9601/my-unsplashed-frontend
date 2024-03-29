@@ -1,6 +1,5 @@
 import FileStatusContext from "../../context/FileStatusContext";
 import { useContext } from "react";
-import Detail from "../detail";
 import Upload from "../upload";
 import Uploading from "../uploading";
 import { OpacityContainer } from "../../styles/styled/div";
