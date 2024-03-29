@@ -45,7 +45,12 @@ const Home = () => {
             ) : null}
          </ImageToDelete>
 
-         {showPopUp ? <PopUp message="Uploaded Successfully"></PopUp> : null}
+         {showPopUp ? (
+            <PopUp
+               message="Uploaded Successfully"
+               setShowState={setShowPopUp}
+            ></PopUp>
+         ) : null}
       </>
    );
 };
