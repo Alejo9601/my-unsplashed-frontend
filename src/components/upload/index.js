@@ -8,16 +8,13 @@ import FileStatusContext from "../../context/FileStatusContext";
 import { isImageFile } from "../../helpers/isImageFile";
 
 const Upload = ({ show = true }) => {
-   const { setUploading, setUploadedImg, tagName } =
-      useContext(FileStatusContext);
+   const { setUploading, tagName } = useContext(FileStatusContext);
    const { uploadImage } = useImages();
 
    const handleSelectedFile = (selectedImg) => {
       if (isImageFile(selectedImg) && tagName != null) {
          setUploading(true);
-         uploadImage(tagName, selectedImg).then(() => {
-            setUploading(false);
-         });
+         uploadImage(tagName, selectedImg);
       } else {
          alert("Files should be PNG, JPG... JPEG");
       }

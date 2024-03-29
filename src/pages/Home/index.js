@@ -5,16 +5,20 @@ import Header from "../../components/Header";
 import UploadImageModal from "../../components/UploadImageModal";
 import { Button as CancelButton } from "../../components/Generics/Button";
 import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDeleteContext";
-import ImagesContext from "../../context/ImagesContext";
+import FileStatusContext from "../../context/FileStatusContext";
 
 const Home = () => {
    const [showDeleteModal, setShowDeleteModal] = useState(false);
    const [showUploadModal, setShowUploadModal] = useState(false);
-   const { images } = useContext(ImagesContext);
+   const { uploadedImg, resetFileStatusContext } =
+      useContext(FileStatusContext);
 
    useEffect(() => {
-      setShowUploadModal(false);
-   }, [images]);
+      if (uploadedImg != null) {
+         setShowUploadModal(false);
+         resetFileStatusContext();
+      }
+   }, [uploadedImg]);
 
    return (
       <>

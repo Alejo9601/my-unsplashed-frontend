@@ -9,16 +9,14 @@ function UploadImageModal() {
    const { uploading, uploadedImg } = useContext(FileStatusContext);
 
    return (
-      <OpacityContainer>
-         {uploadedImg !== null ? (
-            <Detail />
-         ) : (
-            <>
+      <>
+         {uploadedImg == null ? (
+            <OpacityContainer>
                <Upload show={uploading ? false : true} />
                <Uploading show={uploading ? true : false} />
-            </>
-         )}
-      </OpacityContainer>
+            </OpacityContainer>
+         ) : null}
+      </>
    );
 }
 

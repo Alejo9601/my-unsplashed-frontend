@@ -8,6 +8,13 @@ export const StatusContextProvider = ({ children }) => {
    const [tagName, setTagName] = useState(null);
    const [imgUrl, setImgUrl] = useState(null);
 
+   const resetFileStatusContext = () => {
+      setUploading(false);
+      setUploadedImg(null);
+      setTagName(null);
+      setImgUrl(null);
+   };
+
    const data = {
       uploading,
       setUploading,
@@ -17,6 +24,7 @@ export const StatusContextProvider = ({ children }) => {
       setTagName,
       imgUrl,
       setImgUrl,
+      resetFileStatusContext,
    };
 
    return (
