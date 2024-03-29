@@ -16,6 +16,6 @@
    flex-wrap: wrap;
    justify-content: center;
    align-content: flex-start;
-   background-color: #ffffff;
-   min-height: 100vh;
+   background-color: hsl(0, 0%, 100%);
+   min-height: 120vh;
 }
