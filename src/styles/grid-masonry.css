@@ -2,7 +2,7 @@
    width: 70%;
    columns: 3 300px;
    gap: 15px;
-   padding-top: 50px;
+   padding: 50px 0px;
 }
 
 .grid-masonry__item-container {
