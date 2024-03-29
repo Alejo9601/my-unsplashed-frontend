@@ -7,6 +7,7 @@ import { Button as CancelButton } from "../../components/Generics/Button";
 import PopUp from "../../components/PopUp";
 import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDeleteContext";
 import FileStatusContext from "../../context/FileStatusContext";
+import scrollBottom from "../../helpers/scrollBottom";
 
 const Home = () => {
    const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -20,6 +21,7 @@ const Home = () => {
       if (uploadedImg != null) {
          setShowUploadModal(false);
          setShowPopUp(true);
+         scrollBottom();
          resetFileStatusContext();
       }
    }, [uploadedImg]);
