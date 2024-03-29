@@ -1,20 +1,21 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Noto Sans", sans-serif;
+   margin: 0px;
+   padding: 0px;
+   font-family: "Noto Sans", sans-serif;
 }
 
 :root {
-  --color-green: #3db46d;
-  --color-lightgray: #bdbdbd;
-  --color-red: #eb5757;
+   --color-green: #3db46d;
+   --color-lightgreen: #c7ecd6;
+   --color-lightgray: #bdbdbd;
+   --color-red: #eb5757;
 }
 
 .App {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  background-color: #ffffff;
-  min-height: 100vh;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-content: flex-start;
+   background-color: #ffffff;
+   min-height: 100vh;
 }
