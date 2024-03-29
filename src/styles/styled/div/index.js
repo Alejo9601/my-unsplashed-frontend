@@ -24,7 +24,7 @@ export const MiddleContainer = styled(FlexDiv)`
 
 export const StaticBar = styled.div`
    height: 5px;
-   width: 400px;
+   width: 100%;
    background-color: #f6f6f6;
    border-radius: 5px;
    overflow: hidden;
