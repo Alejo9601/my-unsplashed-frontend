@@ -68,6 +68,7 @@ export const FlexCard = styled(FlexColumnDiv)`
    @media (max-width: 768px) {
       height: fit-content;
       width: 300px;
+      padding: 30px 20px;
    }
 `;
 
