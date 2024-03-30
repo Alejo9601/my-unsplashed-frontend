@@ -21,9 +21,12 @@ const Home = () => {
          setShowUploadModal(false);
          setShowPopUp(true);
          resetFileStatusContext();
-         scrollBottom();
       }
    }, [uploadedImg]);
+
+   useEffect(() => {
+      if (!showUploadModal) scrollBottom();
+   }, [showUploadModal]);
 
    return (
       <>

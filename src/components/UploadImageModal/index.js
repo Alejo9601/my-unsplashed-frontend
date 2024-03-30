@@ -7,7 +7,8 @@ import { Button as CancelButton } from "../../components/Generics/Button";
 import preventAppScroll from "../../helpers/preventAppScroll";
 
 function UploadImageModal({ setShow }) {
-   const { uploading, uploadedImg } = useContext(FileStatusContext);
+   const { uploading, uploadedImg, resetFileStatusContext } =
+      useContext(FileStatusContext);
 
    useEffect(() => {
       preventAppScroll(true);
@@ -18,18 +19,16 @@ function UploadImageModal({ setShow }) {
 
    return (
       <>
-         {uploadedImg == null ? (
-            <OpacityContainer>
-               <CancelButton
-                  btnText="X"
-                  handleClick={() => {
-                     setShow(false);
-                  }}
-               />
-               <Upload show={uploading ? false : true} />
-               <Uploading show={uploading ? true : false} />
-            </OpacityContainer>
-         ) : null}
+         <OpacityContainer>
+            <CancelButton
+               btnText="X"
+               handleClick={() => {
+                  setShow(false);
+               }}
+            />
+            <Upload show={uploading ? false : true} />
+            <Uploading show={uploading ? true : false} />
+         </OpacityContainer>
       </>
    );
 }
