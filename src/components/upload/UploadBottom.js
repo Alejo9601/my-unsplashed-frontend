@@ -19,17 +19,18 @@ const UploadBottom = ({ handleSelectedFile }) => {
             <P>Or</P>
             <InputButton handleSelectedFile={handleSelectedFile} />
          </FlexColumnDiv>
-         <div className="modal__form">
+         <form className="modal__form" autoComplete="off">
             <label>
-               Name tag for image
                <input
+                  autoComplete="false"
                   ref={imageLabelRef}
                   type="text"
                   id="image-label"
+                  placeholder="Name tag for image here ..."
                   onChange={handleOnChange}
                />
             </label>
-         </div>
+         </form>
       </FlexColumnDiv>
    );
 };
