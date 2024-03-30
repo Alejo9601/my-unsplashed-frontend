@@ -3,7 +3,6 @@ import ConfirmDeleteModal from "../../components/ConfirmDeleteModal";
 import GridMasonry from "../../components/GridMasonry";
 import Header from "../../components/Header";
 import UploadImageModal from "../../components/UploadImageModal";
-import { Button as CancelButton } from "../../components/Generics/Button";
 import PopUp from "../../components/PopUp";
 import { ImageToDeleteProvider as ImageToDelete } from "../../context/ImageToDeleteContext";
 import FileStatusContext from "../../context/FileStatusContext";
@@ -21,8 +20,8 @@ const Home = () => {
       if (uploadedImg != null) {
          setShowUploadModal(false);
          setShowPopUp(true);
-         scrollBottom();
          resetFileStatusContext();
+         scrollBottom();
       }
    }, [uploadedImg]);
 
@@ -32,11 +31,7 @@ const Home = () => {
 
          {showUploadModal ? (
             <>
-               <CancelButton
-                  btnText="X"
-                  handleClick={() => setShowUploadModal(false)}
-               />
-               <UploadImageModal />
+               <UploadImageModal setShow={setShowUploadModal} />
             </>
          ) : null}
 
