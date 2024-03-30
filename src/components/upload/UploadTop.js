@@ -6,7 +6,7 @@ const UploadTop = () => {
    return (
       <FlexColumnDiv>
          <StyledH1>Upload your Image</StyledH1>
-         <P>Files should be PNG, JPEG ...</P>
+         <P>Only images of certain types are accepted</P>
       </FlexColumnDiv>
    );
 };
