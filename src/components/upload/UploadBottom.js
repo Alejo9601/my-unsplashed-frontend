@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { P_Gray as P } from "../../styles/styled/p";
+import { hidable_P as P } from "../../styles/styled/p";
 import InputButton from "./InputButton";
 import "../../styles/modal.css";
 import FileStatusContext from "../../context/FileStatusContext";

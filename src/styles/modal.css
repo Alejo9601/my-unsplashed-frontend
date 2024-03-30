@@ -42,6 +42,10 @@
    align-items: center;
    margin: 20px 0px 0px 0px;
    font-size: 14px;
+
+   @media (max-width: 768px) {
+      font-size: 10px;
+   }
 }
 
 .modal__form input[type="text"],

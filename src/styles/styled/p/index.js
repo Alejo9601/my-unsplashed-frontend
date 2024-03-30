@@ -24,6 +24,16 @@ const P_12px = styled(P)`
 const P_Gray = styled(P_12px)`
    color: gray;
    font-weight: normal;
+
+   @media (max-width: 768px) {
+      font-size: 10px;
+   }
+`;
+
+const hidable_P = styled(P_Gray)`
+   @media (max-width: 768px) {
+      display: none;
+   }
 `;
 
 const DragDescription = styled(P_Gray)`
@@ -40,4 +50,4 @@ const P_ellipsis = styled(P)`
    text-overflow: ellipsis;
 `;
 
-export { P, P_Gray, P_8px, P_12px, DragDescription, P_ellipsis };
+export { P, P_Gray, hidable_P, P_8px, P_12px, DragDescription, P_ellipsis };
