@@ -20,12 +20,14 @@ const Home = () => {
       if (uploadedImg != null) {
          setShowUploadModal(false);
          setShowPopUp(true);
-         resetFileStatusContext();
       }
    }, [uploadedImg]);
 
    useEffect(() => {
-      if (!showUploadModal) scrollBottom();
+      if (!showUploadModal && uploadedImg != null) {
+         scrollBottom();
+         resetFileStatusContext();
+      }
    }, [showUploadModal]);
 
    return (
