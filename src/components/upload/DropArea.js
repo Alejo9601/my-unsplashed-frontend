@@ -1,14 +1,21 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { DragArea, FlexColumnDiv } from "../../styles/styled/div";
 import { StyledInput } from "../../styles/styled/input";
 import { DragDescription as P } from "../../styles/styled/p";
 import BackgroundImage from "./BackgroundImage";
+import FileStatusContext from "../../context/FileStatusContext";
 
 const DragContainer = ({ handleSelectedFile }) => {
+   const { tagName } = useContext(FileStatusContext);
    const inputRef = useRef();
    const divRef = useRef();
 
    const handleOnChange = () => {
+      if (tagName == null) {
+         alert("Complete Tag name first");
+         return;
+      }
+
       const selectedImg = inputRef.current.files[0];
       handleSelectedFile(selectedImg);
    };
