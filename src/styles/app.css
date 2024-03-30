@@ -4,6 +4,15 @@
    font-family: "Noto Sans", sans-serif;
 }
 
+html {
+   scrollbar-gutter: stable;
+}
+
+html.noscroll {
+   position: fixed;
+   overflow-y: scroll;
+}
+
 :root {
    --color-green: #3db46d;
    --color-lightgreen: #c7ecd6;

@@ -36,7 +36,7 @@ const Home = () => {
                   btnText="X"
                   handleClick={() => setShowUploadModal(false)}
                />
-               <UploadImageModal showModal={setShowUploadModal} />
+               <UploadImageModal />
             </>
          ) : null}
 
