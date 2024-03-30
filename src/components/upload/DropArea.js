@@ -13,11 +13,11 @@ const DragContainer = ({ handleSelectedFile }) => {
    const handleOnChange = () => {
       if (tagName == null) {
          alert("Complete Tag name first");
+         inputRef.current.value = ""; //Cleaning current stored files
          return;
       }
 
-      const selectedImg = inputRef.current.files[0];
-      handleSelectedFile(selectedImg);
+      handleSelectedFile(inputRef.current.files[0]);
    };
 
    useEffect(() => {
